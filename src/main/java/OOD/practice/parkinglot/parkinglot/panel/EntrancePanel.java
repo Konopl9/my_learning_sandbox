@@ -18,7 +18,7 @@ public class EntrancePanel {
     }
 
     public Optional<Ticket> issueTicket(Vehicle vehicle) {
-        ParkingSpot freeSpot = null;
+        ParkingSpot freeSpot;
         try {
             freeSpot = parkingFloor.allocateSpot(vehicle);
         } catch (AvailableSpotNotFoundException exception) {

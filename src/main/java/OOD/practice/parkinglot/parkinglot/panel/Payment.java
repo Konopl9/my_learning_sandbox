@@ -12,7 +12,7 @@ public class Payment {
     }
 
     public void calculateCharges(Ticket ticket) {
-        double toPay = pricingManager.calculatePrice(ticket.getParkingSpot().getParkingSpotType(), ticket.getEntranceTime());
+        double toPay = pricingManager.calculatePrice(ticket.getParkingSpotType(), ticket.getEntranceTime());
         System.out.println("You need to pay " + toPay + "$");
     }
 

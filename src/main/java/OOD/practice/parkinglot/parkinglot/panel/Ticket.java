@@ -1,6 +1,7 @@
 package OOD.practice.parkinglot.parkinglot.panel;
 
 import OOD.practice.parkinglot.parkinglot.parkingspot.ParkingSpot;
+import OOD.practice.parkinglot.parkinglot.parkingspot.ParkingSpotType;
 import OOD.practice.parkinglot.vehicle.Vehicle;
 
 import java.time.LocalDateTime;
@@ -29,11 +30,11 @@ public class Ticket {
         return ticketId;
     }
 
-    public ParkingSpot getParkingSpot() {
-        return parkingSpot;
-    }
-
     public LocalDateTime getEntranceTime() {
         return entranceTime;
+    }
+
+    public ParkingSpotType getParkingSpotType() {
+        return this.parkingSpot.getParkingSpotType();
     }
 }

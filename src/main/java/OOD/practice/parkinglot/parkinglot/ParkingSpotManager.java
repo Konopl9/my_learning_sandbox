@@ -1,7 +1,6 @@
 package OOD.practice.parkinglot.parkinglot;
 
 import OOD.practice.parkinglot.exception.UnknownVehicleType;
-import OOD.practice.parkinglot.parkinglot.parkingspot.ParkingSpot;
 import OOD.practice.parkinglot.parkinglot.parkingspot.ParkingSpotType;
 import OOD.practice.parkinglot.vehicle.Vehicle;
 import OOD.practice.parkinglot.vehicle.VehicleType;
@@ -18,7 +17,7 @@ public class ParkingSpotManager {
     }
 
     public Set<ParkingSpotType> canParkOnSpots(Vehicle vehicle) {
-        if(vehicle == null) {
+        if (vehicle == null) {
             throw new IllegalArgumentException("Parking spot / Vehicle can't be null");
         }
         if (!vehicleToParkingSpot.containsKey(vehicle.getVehicleType())) {
