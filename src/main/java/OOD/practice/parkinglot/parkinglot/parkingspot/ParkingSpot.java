@@ -3,10 +3,10 @@ package OOD.practice.parkinglot.parkinglot.parkingspot;
 import OOD.practice.parkinglot.vehicle.Vehicle;
 
 public abstract class ParkingSpot {
-    final int spotNumber;
-    final ParkingSpotType parkingSpotType;
-    Vehicle vehicle;
-    boolean isOccupied;
+    private final int spotNumber;
+    private final ParkingSpotType parkingSpotType;
+    private Vehicle vehicle;
+    private boolean isOccupied;
 
     public ParkingSpot(int spotNumber, ParkingSpotType parkingSpotType) {
         this.spotNumber = spotNumber;
@@ -23,6 +23,10 @@ public abstract class ParkingSpot {
     public void unParkVehicle() {
         this.vehicle = null;
         this.isOccupied = false;
+    }
+
+    public boolean isAvailable() {
+        return !isOccupied;
     }
 
     public ParkingSpotType getParkingSpotType() {

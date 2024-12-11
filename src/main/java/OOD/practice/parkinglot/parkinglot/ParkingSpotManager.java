@@ -17,15 +17,14 @@ public class ParkingSpotManager {
         initializeMapping();
     }
 
-    public boolean canPark(Vehicle vehicle, ParkingSpot parkingSpot) {
-        if(vehicle == null || parkingSpot == null) {
+    public Set<ParkingSpotType> canParkOnSpots(Vehicle vehicle) {
+        if(vehicle == null) {
             throw new IllegalArgumentException("Parking spot / Vehicle can't be null");
         }
         if (!vehicleToParkingSpot.containsKey(vehicle.getVehicleType())) {
             throw new UnknownVehicleType("Unknown vehicle type");
         }
-        Set<ParkingSpotType> spotTypes = vehicleToParkingSpot.get(vehicle.getVehicleType());
-        return spotTypes.contains(parkingSpot.getParkingSpotType());
+        return vehicleToParkingSpot.get(vehicle.getVehicleType());
     }
 
     private void initializeMapping() {
