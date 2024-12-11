@@ -37,4 +37,14 @@ public class Ticket {
     public ParkingSpotType getParkingSpotType() {
         return this.parkingSpot.getParkingSpotType();
     }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "ticketId=" + ticketId +
+                ", entranceTime=" + entranceTime +
+                ", parkingSpot=" + parkingSpot +
+                ", vehicle=" + vehicle +
+                '}';
+    }
 }

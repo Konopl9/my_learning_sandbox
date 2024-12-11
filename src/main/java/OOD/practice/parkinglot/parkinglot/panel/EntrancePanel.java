@@ -23,6 +23,8 @@ public class EntrancePanel {
         ParkingSpot freeSpot;
         try {
             freeSpot = parkingFloor.allocateSpot(vehicle);
+            freeSpot.parkVehicle(vehicle);
+            vehicle.setParkingSpot(freeSpot);
         } catch (AvailableSpotNotFoundException exception) {
             return Optional.empty();
         }

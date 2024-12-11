@@ -27,4 +27,12 @@ public abstract class Vehicle {
     public void setParkingSpot(ParkingSpot parkingSpot) {
         this.parkingSpot = parkingSpot;
     }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "licensePlate='" + licensePlate + '\'' +
+                ", vehicleType=" + vehicleType +
+                '}';
+    }
 }

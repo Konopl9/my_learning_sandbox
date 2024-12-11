@@ -32,4 +32,13 @@ public abstract class ParkingSpot {
     public ParkingSpotType getParkingSpotType() {
         return parkingSpotType;
     }
+
+    @Override
+    public String toString() {
+        return "ParkingSpot{" +
+                "spotNumber=" + spotNumber +
+                ", parkingSpotType=" + parkingSpotType +
+                ", vehicle=" + vehicle +
+                '}';
+    }
 }
