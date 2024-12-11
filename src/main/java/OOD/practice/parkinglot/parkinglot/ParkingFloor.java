@@ -7,12 +7,14 @@ import OOD.practice.parkinglot.vehicle.Vehicle;
 import java.util.*;
 
 public class ParkingFloor {
+    private static int floorCount = 1;
     private final int floorNumber;
     private final Map<ParkingSpotType, Deque<ParkingSpot>> parkingSpots;
     private final ParkingSpotManager parkingSpotManager;
 
-    public ParkingFloor(int floorNumber) {
-        this.floorNumber = floorNumber;
+    public ParkingFloor() {
+        this.floorNumber = floorCount;
+        floorCount++;
         this.parkingSpots = new HashMap<>();
         this.parkingSpotManager = new ParkingSpotManager();
         initializeBaseSpots();
@@ -60,5 +62,9 @@ public class ParkingFloor {
         ParkingSpot parkingSpot = vehicle.getParkingSpot();
         parkingSpot.unParkVehicle();
         parkingSpots.get(parkingSpot.getParkingSpotType()).add(vehicle.getParkingSpot());
+    }
+
+    public int getFloorNumber() {
+        return floorNumber;
     }
 }

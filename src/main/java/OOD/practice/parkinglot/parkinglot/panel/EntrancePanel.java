@@ -9,11 +9,13 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 public class EntrancePanel {
+    private static int entranceCount = 1;
     private final int panelId;
     private final ParkingFloor parkingFloor;
 
-    public EntrancePanel(int panelId, ParkingFloor parkingFloor) {
-        this.panelId = panelId;
+    public EntrancePanel(ParkingFloor parkingFloor) {
+        this.panelId = entranceCount;
+        entranceCount++;
         this.parkingFloor = parkingFloor;
     }
 
