@@ -1,0 +1,25 @@
+- 2 players
+- 3x3 board
+- players put 'X' and 'O' in turns
+- we check if winner is decided on each move
+- we can win / draw
+
+Classes:
+1. Game
+    a. getId Done
+2. Player
+    a. getName Done
+    b. getMark Done
+3. Board
+    a. makeMove(Player, int x, int y)
+        When we make a move we need to make sure our player is valid + x and y
+        We need to place a mark on a spot
+        We need to check if player has won
+            O(n) - check diagonals, row, column
+            O(1) - keep track of the amount of mark each has peer row.
+        Give turn To Next Player
+    b. checkWinner
+    c. initialize() Done
+    d. getTurn() Done
+    e. display() Done
+    f. isFull()
